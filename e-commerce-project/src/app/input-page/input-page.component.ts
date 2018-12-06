@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputPageComponent implements OnInit {
 
+  inputUsername = "";
+  inputPass = "";
+
+  loginInput(event){
+    this.inputUsername = event.target.value;
+  }
+
+  passInput(event){
+    this.inputPass = event.target.value;
+  }
+
+  toSubmit(){
+    console.log("Username is '" + this.inputUsername + "' and password is '" + this.inputPass + "'.");
+  }
+
   constructor() { }
 
   ngOnInit() {
