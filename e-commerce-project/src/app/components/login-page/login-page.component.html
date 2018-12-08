@@ -1,0 +1,10 @@
+<h3>Welcom to login page!</h3>
+<p>Enter your username and password. Then push Submit button.</p>
+
+<form>
+	<div class="form-group">
+		<input #username type="text" name= 'username' placeholder="Username"><br><br>
+		<input #password type="password" name="pass" placeholder="Password"><br><br>
+		<button (click)="toSubmit(username.value, password.value)">Submit</button>	
+	</div>
+</form>
