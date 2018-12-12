@@ -1,8 +1,18 @@
 <h3>Welcom to login page!</h3>
 <p>Enter your username and password. Then push Submit button.</p>
 
-<form (ngSubmit)="toSubmit(username.value, password.value)">
-	<input #username type="text" name= 'username' placeholder="Username"><br><br>
-	<input #password type="password" name="pass" placeholder="Password"><br><br>
-	<button type="submit">Submit</button>
+<form [formGroup]="loginForm" (ngSubmit)="toSubmit()">
+
+	<div class="">
+	  <label for="userName">Username:</label>
+	  <input type="email" formControlName="userName" class="" id="userName" placeholder="Username">
+	</div>
+
+	<div class="">
+	  <label for="password">Password:</label>
+	  <input type="password" formControlName="password" class="" id="password" placeholder="Password">
+	</div>
+
+	<button [disabled]="!loginForm.value.password || !loginForm.value.userName || loginForm.status!=='VALID'" type="submit" class="">Submit</button>
+
 </form>
